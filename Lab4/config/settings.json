@@ -1,0 +1,6 @@
+{
+    "mongoConfig": {
+      "serverUrl": "mongodb://localhost:27017/lab4",
+      "database": "Allen_Best_lab4"
+    }
+  }
