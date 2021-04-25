@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-sm-12">
+    <main>
+        {{#if isEmpty}}
+            <h1 class="main-text">Status Code: 404</h1>
+            <p class="error">We're sorry, but there has been an error. Please try again.</p>
+        {{else}}
+            <h1 class="main-text">{{title}}</h1>
+            <h2 class="secondary-text">Search Term: {{searchTerm}}</h2>
+            {{#if shows}}
+                <ul>
+                    {{#each shows}}
+                        <li>
+                            {{#each this}}
+                                <a href="/shows/{{id}}">
+                                    {{name}}
+                                </a>
+                            {{/each}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p class="not-found">We're sorry, but no results were found for {{searchTerm}}.</p>
+            {{/if}}
+            <a href="/" class="back-link">Make another search</a>
+        {{/if}}
+    </main>
+  </div>
+</div>

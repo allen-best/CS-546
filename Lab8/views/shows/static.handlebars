@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-lg-12">
+    <main>
+        <div>
+            {{#if show}}
+                <h1 class="main-text">{{title}}</h1>
+                <img class="center-img" alt="{{show.name}}" src="{{show.image.medium}}">
+                <dl>
+                    <dt>Language</dt>
+                    {{#if (isnull show.language)}}<dd>No value defined</dd>{{else}}<dd>{{show.language}}</dd>{{/if}}
+                    <dt>Genres</dt>
+                    <dd>
+                        {{#if (isempty show.genres)}}<dd>No genres defined</dd>
+                        {{else}}
+                            <ul>
+                                {{#each show.genres}}
+                                <li>
+                                    {{this}}
+                                </li>
+                                {{/each}}
+                            </ul>
+                        {{/if}}
+                    </dd>
+                    <dt>Average Rating</dt>
+                    {{#if (isnull show.rating.average)}}<dd>No value defined</dd>{{else}}<dd>{{show.rating.average}}</dd>{{/if}}
+                    <dt>Network</dt>
+                    {{#if (isnull show.network.name)}}<dd>No value defined</dd>{{else}}<dd>{{show.network.name}}</dd>{{/if}}
+                    <dt>Summary</dt>
+                    {{#if (isnull show.summary)}}<dd>No value defined</dd>{{else}}<dd>{{{show.summary}}}</dd>{{/if}}
+                </dl>
+            {{else}}
+                <h1 class="main-text">Status Code: 404</h1>
+                <p class="error">We're sorry, but there has been an error. Please try again.</p>
+            {{/if}}
+        </div>
+    </main>
+  </div>
+</div>
